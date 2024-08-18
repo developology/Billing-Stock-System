@@ -1,10 +1,16 @@
 # Billing Stock System
 
 BillingDict = {}
+SKUList=[]
 
 def InputFun():
     while True:
         SKU = int(input("Enter SKU (Unique Number): "))
+        if SKU in SKUList:
+          print("SKU Already Exists")
+          continue
+        else:
+            SKUList.append(SKU)
         ProductName = input("Enter Product Name: ")
         QT = int(input("Enter Product QT: "))
         SinglePrice = int(input("Enter Single Product Price: "))
